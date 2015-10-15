@@ -1,0 +1,11 @@
+# base-image for golang on any machine using a template var
+FROM resin/%%RESIN_MACHINE_NAME%%-golang:latest
+
+# enable systemd
+ENV INITSYSTEM on
+
+# copy start.sh script to root dir
+COPY start.sh /
+
+# run start.sh on start
+CMD ["bash", "/start.sh"]
