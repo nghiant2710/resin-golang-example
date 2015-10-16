@@ -1,6 +1,6 @@
 ## Resin Golang Image Example
 
-This projects contains examples of how to use Resin Golang images on devices supported by [resin.io][resin-link]. All details about Resin Golang images can be found [here][base-images].
+This project contains examples of how to use Resin Golang images on devices supported by [resin.io][resin-link]. All details about Resin Golang images can be found [here][base-images].
 
 There are two examples in this project. You can select the example by editing `start.sh` script.
 
@@ -10,7 +10,11 @@ Then add your resin.io application's remote:
 ```
 $ git remote add resin username@git.resin.io:username/myapp.git
 ```
-and push the code to the newly added remote:
+and push the code to the newly added remote. To push the code to ARM boards, we need to select native ARM builders for the build by doing:
+```
+$ git push resin master:master-arm
+```
+To push the code to other platforms, we do:
 ```
 $ git push resin master
 ```

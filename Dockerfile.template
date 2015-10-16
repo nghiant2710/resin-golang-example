@@ -4,6 +4,12 @@ FROM resin/%%RESIN_MACHINE_NAME%%-golang:latest
 # enable systemd
 ENV INITSYSTEM on
 
+# download hello example and install. This is the trivial Hello World example.
+RUN go get github.com/golang/example/hello
+
+# download outyet example and install. This will run a web server that answers the question: "Is Go 1.x out yet?"
+# RUN go get github.com/golang/example/outyet
+
 # copy start.sh script to root dir
 COPY start.sh /
 
